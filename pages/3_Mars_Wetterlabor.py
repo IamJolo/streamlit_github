@@ -83,7 +83,7 @@ if 'date' not in st.session_state:
 if 'max_ground_temp' not in st.session_state:
     st.session_state.max_ground_temp = None
     
-if st.button("Open Quiz 1", key= "button1"):
+if st.button("Öffne Quiz 1", key= "button1"):
     st.session_state.date, st.session_state.max_ground_temp = generate_air_temp()
     
 date = st.session_state.date
@@ -107,7 +107,7 @@ if 'date' not in st.session_state:
 if 'max_air_temp' not in st.session_state:
     st.session_state.max_air_temp = None
     
-if st.button("Open Quiz 2", key= "button2"):
+if st.button("Öffnen Quiz 2", key= "button2"):
     st.session_state.date, st.session_state.max_air_temp = generate_ground_temp()
     
 date = st.session_state.date
@@ -133,7 +133,7 @@ if 'date' not in st.session_state:
 if 'mean_pressure' not in st.session_state:
     st.session_state.mean_pressure = None
     
-if st.button("Open Quiz 3", key= "button3"):
+if st.button("Öffne Quiz 3", key= "button3"):
     st.session_state.date, st.session_state.mean_pressure = generate_mean_pressure()
     
 date = st.session_state.date

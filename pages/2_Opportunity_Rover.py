@@ -31,7 +31,7 @@ mehr über seine geheimnisvolle Oberfläche. Jedes Bild erzählt eine Geschichte
 Entdecke Krater, Staubstürme und vielleicht sogar Hinweise auf Wasser! Mit jedem Bild, das du erkundest, 
 kommst du dem Mars ein Stück näher. Bist du bereit, in die Fußstapfen eines echten Marsforschers zu treten?.
 
-Gib einfach ein Datum ein und clicke auf "Ergebnisse anzeigen"
+Gib einfach ein Datum ein und klicke auf "Ergebnisse anzeigen"
 """)
 
 
