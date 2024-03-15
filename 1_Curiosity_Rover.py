@@ -11,14 +11,8 @@ st.set_page_config(page_title="Mars Rover Images", page_icon=":computer:")
 
 
 
-# ### Teil 1:   *Überschrift:* Entdecke die Oberfläche des Mars  *Text:*  
-# Hallo, Weltraumforscher! Klick dich durch atemberaubende Aufnahmen des Mars und erfahre 
-# mehr über seine geheimnisvolle Oberfläche. Jedes Bild erzählt eine Geschichte aus einer fernen Welt. 
-# Entdecke Krater, Staubstürme und vielleicht sogar Hinweise auf Wasser! Mit jedem Bild, das du erkundest, 
-# kommst du dem Mars ein Stück näher. Bist du bereit, in die Fußstapfen eines echten Marsforschers zu treten? 
 
-
-st.title('MarsEntdecker')
+st.title('Mars Entdecker')
 
 image = open("bwl_ien.png", "rb").read()
 colx, coly = st.columns([2, 7])
