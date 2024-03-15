@@ -25,7 +25,7 @@ colx, coly = st.columns([2, 7])
 # Display the image in the first column
 with colx:
     st.image(image, caption='BWLien', use_column_width=True)
-    st.write("test")
+    
 # Display text in the second column
 with coly:
     st.write("""Willkommen, junger Astronaut! Ich bin das BWL-Lien, dein Guide auf dieser faszinierenden Reise durch das Weltall. 
