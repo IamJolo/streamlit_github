@@ -84,7 +84,7 @@ if 'max_ground_temp' not in st.session_state:
 
 # Button zum Öffnen des ersten Quiz und generieren der Zufallswerte    
 if st.button("Öffne Quiz 1", key= "button1"):
-    st.session_state.date, st.session_state.max_ground_temp = generate_air_temp()
+    st.session_state.date, st.session_state.max_ground_temp = generate_ground_temp()
     
 date = st.session_state.date
 max_ground_temp = st.session_state.max_ground_temp
@@ -114,7 +114,7 @@ if 'max_air_temp' not in st.session_state:
     
 # Button zum Öffnen des zweiten Quiz und generieren der Zufallswerte 
 if st.button("Öffnen Quiz 2", key= "button2"):
-    st.session_state.date, st.session_state.max_air_temp = generate_ground_temp()
+    st.session_state.date, st.session_state.max_air_temp = generate_air_temp()
     
 date = st.session_state.date
 max_air_temp = st.session_state.max_air_temp
