@@ -41,7 +41,7 @@ def check_answer_pressure(mean_pressure, user_answer):
     mean_pressure_high_limit = mean_pressure +10
     mean_pressure_low_limit = mean_pressure - 10
     if user_answer < mean_pressure_high_limit and user_answer > mean_pressure_low_limit:
-        return "Richtig, gut gemacht!"
+        return "Richtig, gut gemacht! Der maximale Druck war: " + str(mean_pressure) + " Pa"
     else:
         return str("Nicht ganz, der maximale Druck war: " + str(mean_pressure) + " Pa")
 
@@ -50,7 +50,7 @@ def check_answer(max_air_temp, user_answer):
     max_air_temp_high_limit = max_air_temp +10
     max_air_temp_low_limit = max_air_temp - 10
     if user_answer < max_air_temp_high_limit and user_answer > max_air_temp_low_limit:
-        return "Richtig, gut gemacht!"
+        return "Richtig, gut gemacht! Die maximale Temperatur war: " + str(max_air_temp) + " °C""
     else:
         return str("Nicht ganz, die maximale Temperatur war: " + str(max_air_temp) + " °C")
 
@@ -91,7 +91,7 @@ max_ground_temp = st.session_state.max_ground_temp
 
 # Wenn Datum und maximale Bodentemperatur vorhanden sind, das Quiz anzeigen
 if date is not None and max_ground_temp is not None:
-        st.write(f"Wie war die maximale Bodentemperatur(°C) am {date} (+/-10°C) {max_ground_temp} auf dem Mars?")
+        st.write(f"Wie war die maximale Bodentemperatur(°C) am {date} (+/-10°C) auf dem Mars?")
         user_answer = st.number_input("Enter your answer:", key="input1")
         
         # Button und Funktionsaufruf zum Überprüfen der Antwort
@@ -121,7 +121,7 @@ max_air_temp = st.session_state.max_air_temp
 
 # Wenn Datum und maximale Lufttemperatur vorhanden sind, das Quiz anzeigen
 if date is not None and max_air_temp is not None:
-        st.write(f"Wie war die Lufttemperatur(°C) am {date} (+/-10°C) {max_air_temp} auf dem Mars?")
+        st.write(f"Wie war die Lufttemperatur(°C) am {date} (+/-10°C) auf dem Mars?")
         user_answer = st.number_input("Enter your answer:", key="input2")
         
         # Button und Funktionsaufruf zum Überprüfen der Antwort
@@ -152,7 +152,7 @@ mean_pressure = st.session_state.mean_pressure
 
 # Wenn Datum und Atmosphärendruck vorhanden sind, das Quiz anzeigen
 if date is not None and mean_pressure is not None:
-    st.write(f"Wie war der atmosphärischer Druck am {date} (+/-10 Pa) {mean_pressure} auf dem Mars?")
+    st.write(f"Wie war der atmosphärischer Druck am {date} (+/-10 Pa) auf dem Mars?")
     user_answer = st.number_input("Enter your answer:", key="input3")
         
     # Button und Funktionsaufruf zum Überprüfen der Antwort        
