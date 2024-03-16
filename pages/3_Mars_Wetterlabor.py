@@ -50,7 +50,7 @@ def check_answer(max_air_temp, user_answer):
     max_air_temp_high_limit = max_air_temp +10
     max_air_temp_low_limit = max_air_temp - 10
     if user_answer < max_air_temp_high_limit and user_answer > max_air_temp_low_limit:
-        return "Richtig, gut gemacht! Die maximale Temperatur war: " + str(max_air_temp) + " °C""
+        return "Richtig, gut gemacht! Die maximale Temperatur war: " + str(max_air_temp) + " °C"
     else:
         return str("Nicht ganz, die maximale Temperatur war: " + str(max_air_temp) + " °C")
 
