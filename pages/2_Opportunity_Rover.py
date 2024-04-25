@@ -60,7 +60,7 @@ if st.button("Ergebnisse anzeigen"):
     api_start = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?earth_date="
     api_date = str(year)+"-"+str(month)+"-"+str(day)
     api_date_rest = "&api_key="
-    api_key = "DEMO_KEY"
+    api_key = "xR8yTqqbLcKcdRuszhrNlJlsVcSjiLivb1x7QbZh"
     api_url = api_start + api_date + api_date_rest + api_key
     print(api_url)
     response = requests.get(api_url)
