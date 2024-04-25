@@ -52,8 +52,11 @@ loop_interval = st.number_input("Anzahl ausgegebener Bilder", min_value=1, step=
 # Funktion zum Anzeigen der NASA Bilder
 def display_image_from_url(url,description):
     response = requests.get(url)
-    image = Image.open(BytesIO(response.content))
-    st.image(image, caption=description, use_column_width=True)
+    try: 
+        image = Image.open(BytesIO(response.content))
+        st.image(image, caption=description, use_column_width=True)
+    except: 
+        st.write(" The API for the Opportunity Rover currently doesn't return pictures. It just forwards to the NASA website. This change has been recently made, I wrote them a mail writing if the could fix it ")
 
 if st.button("Ergebnisse anzeigen"):
     # Apicall für NASA API
@@ -69,17 +72,20 @@ if st.button("Ergebnisse anzeigen"):
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
     
-    st.write(complete_json)
-    st.write(picture_urls)
-
+    #st.write(complete_json)
+    #st.write(picture_urls)
+     
     if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
     
     #API call returniert links zu Bildern 
-    #Erstellung von zwei Listen mit den URLs und der aufgenommenen Kamera
+    #Erstellung von zwei Listen mit den URLs und der aufgenommenen Kamera 
     for i in range(len(complete_json["photos"])):
         picture_urls.append(complete_json["photos"][i]['img_src'])
         camera_description.append(complete_json["photos"][i]["camera"]["full_name"])
+    
+
+
 
 
     
