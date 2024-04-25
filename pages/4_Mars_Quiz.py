@@ -22,6 +22,6 @@ with coly:
 
 
 st.write("Frage 1")
-quiz_answer_1 = st.chat_input("Trage hier deine Antwort ein")
+quiz_answer_1 = st.text_input("Trage hier deine Antwort ein")
 if st.button("Antwort überprüfen"):
     st.write(quiz_answer_1)
