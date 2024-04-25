@@ -70,14 +70,15 @@ if st.button("Ergebnisse anzeigen"):
     picture_urls = []
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
-    if len(complete_json["photos"]) == 0:
+    print(complete_json)
+    """if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
     
     #API call returniert links zu Bildern 
     #Erstellung von zwei Listen mit den URLs und der aufgenommenen Kamera
     for i in range(len(complete_json["photos"])):
         picture_urls.append(complete_json["photos"][i]['img_src'])
-        camera_description.append(complete_json["photos"][i]["camera"]["full_name"])
+        camera_description.append(complete_json["photos"][i]["camera"]["full_name"])"""
 
 
     
