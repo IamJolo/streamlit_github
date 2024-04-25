@@ -69,6 +69,8 @@ if st.button("Ergebnisse anzeigen"):
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
     
+    st.write(complete_json)
+    st.write(picture_urls)
 
     if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
