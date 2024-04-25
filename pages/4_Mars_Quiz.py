@@ -19,3 +19,9 @@ with colx:
 # Anzeige des Textes in der zweiten Spalte
 with coly:
     st.write("""Willkommen, junger Astronaut! In diesem spannenden Quiz kannst du dein Marswissen testen """)
+
+
+st.write("Frage 1")
+quiz_answer_1 = st.chat_input("Trage hier deine Antwort ein")
+if st.button("Antwort überprüfen"):
+    st.write(quiz_answer_1)
