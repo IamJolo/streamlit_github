@@ -62,7 +62,7 @@ if st.button("Ergebnisse anzeigen"):
     api_start = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date="
     api_date = str(year)+"-"+str(month)+"-"+str(day)
     api_date_rest = "&api_key="
-    api_key = "DEMO_KEY"
+    api_key = "xR8yTqqbLcKcdRuszhrNlJlsVcSjiLivb1x7QbZh"
     api_url = api_start + api_date + api_date_rest + api_key
     print(api_url)
     response = requests.get(api_url)
@@ -70,16 +70,16 @@ if st.button("Ergebnisse anzeigen"):
     picture_urls = []
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
-    st.write(complete_json)
+    
 
-    """if len(complete_json["photos"]) == 0:
+    if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
     
     #API call returniert links zu Bildern 
     #Erstellung von zwei Listen mit den URLs und der aufgenommenen Kamera
     for i in range(len(complete_json["photos"])):
         picture_urls.append(complete_json["photos"][i]['img_src'])
-        camera_description.append(complete_json["photos"][i]["camera"]["full_name"])"""
+        camera_description.append(complete_json["photos"][i]["camera"]["full_name"])
 
 
     
