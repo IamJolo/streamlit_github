@@ -42,7 +42,7 @@ st.divider()
 #Anzeige der Frage 2
 st.subheader("Frage 2: Wie hoch ist der höchste Berg auf dem Mars?")
 # Definition des Radiomenüs mit Antwortmeüs
-quiz_answer_2 = st.radio("Wähle die richtige Antwort aus", [4, 11, 25, 236])
+quiz_answer_2 = st.radio("Wähle die richtige Antwort aus (Angaben in Kilometern)", [4, 11, 25, 236])
 
 #Button um den Antwort auszugeben und Infotext auszugeben
 if st.button("Antwort überprüfen", key="quizbutton2"):
