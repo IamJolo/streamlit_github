@@ -21,7 +21,7 @@ with coly:
     st.write("""Willkommen, junger Astronaut! In diesem spannenden Quiz kannst du dein Marswissen testen """)
 
 
-st.write("Frage 1")
-quiz_answer_1 = st.text_input("Trage hier deine Antwort ein")
+st.write("Frage 1: Wie viele Tage hat ein Jahr auf dem Mars?")
+quiz_answer_1 = st.radio("Pick one", [365, 687, 55, 238])
 if st.button("Antwort überprüfen"):
     st.write(quiz_answer_1)
