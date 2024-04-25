@@ -30,7 +30,7 @@ if st.button("Antwort überprüfen"):
     if quiz_answer_1 == "687 Tage":
         st.write(" Richtig gemacht! " + infotext_1)
     else: 
-        st.write(" Fast. " + infotext_1))
+        st.write(" Fast. " + infotext_1)
 
 st.divider()
 
