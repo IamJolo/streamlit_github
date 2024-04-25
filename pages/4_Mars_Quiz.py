@@ -31,7 +31,8 @@ if st.button("Antwort überprüfen"):
                     etwa 687 Tage, um die Sonne einmal zu umkreisen. Das liegt daran, dass seine 
                     Umlaufbahn um die Sonne größer ist als die der Erde."""
     if quiz_answer_1 == "687 Tage":
-        st.write(" Richtig gemacht! " + infotext_1)
+        st.success("Richtig gemacht!")
+        st.write(infotext_1)
         st.balloons()
     else: 
         st.write(" Fast. " + infotext_1)
