@@ -22,6 +22,14 @@ with coly:
 
 
 st.write("Frage 1: Wie viele Tage hat ein Jahr auf dem Mars?")
-quiz_answer_1 = st.radio("Pick one", [365, 687, 55, 238])
+quiz_answer_1 = st.radio("Pick one", ["365 Tage", "687 Tage", "55 Tage", "238 Tage"])
 if st.button("Antwort überprüfen"):
-    st.write(quiz_answer_1)
+    if quiz_answer_1 == "687 Tage":
+        st.write(""" Richtig gemacht! 
+                    Ein Marsjahr ist viel länger als ein Jahr auf der Erde! Der Mars benötigt 
+                    etwa 687 Tage, um die Sonne einmal zu umkreisen. Das liegt daran, dass seine 
+                    Umlaufbahn um die Sonne größer ist als die der Erde.""")
+    else: 
+        st.write(""" Fast, ein Marsjahr ist viel länger als ein Jahr auf der Erde! Der Mars benötigt 
+                    etwa 687 Tage, um die Sonne einmal zu umkreisen. Das liegt daran, dass seine 
+                    Umlaufbahn um die Sonne größer ist als die der Erde.""")
