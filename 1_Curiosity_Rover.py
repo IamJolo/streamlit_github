@@ -31,9 +31,6 @@ kommst du dem Mars ein Stück näher. Bist du bereit, in die Fußstapfen eines e
 
 Gib einfach ein Datum ein und klicke auf "Ergebnisse anzeigen"
 """)
-
-
-
     
 # Definition der 3 Inputfelder für Jahr, Monat und Tag    
 col3, col2, col1 = st.columns(3)
