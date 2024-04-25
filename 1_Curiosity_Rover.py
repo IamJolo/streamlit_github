@@ -8,9 +8,6 @@ from io import BytesIO
 # Seitenkonfiguration einstellen
 st.set_page_config(page_title="Mars Rover Images", page_icon=":computer:")
 
-
-
-
 st.title('Mars Entdecker')
 
 image = open("bwl_ien.png", "rb").read()
@@ -71,7 +68,7 @@ if st.button("Ergebnisse anzeigen"):
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
     st.write(complete_json)
-"""
+    """
     if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
     
