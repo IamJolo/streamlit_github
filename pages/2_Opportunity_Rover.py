@@ -56,7 +56,7 @@ def display_image_from_url(url,description):
         image = Image.open(BytesIO(response.content))
         st.image(image, caption=description, use_column_width=True)
     except: 
-        st.write(" The API for the Opportunity Rover currently doesn't return pictures. It just forwards to the NASA website. This change has been recently made, I wrote them a mail writing if the could fix it ")
+        st.write(" The API for the Opportunity Rover currently doesn't return pictures. It forwards to the NASA website. This may change later")
 
 if st.button("Ergebnisse anzeigen"):
     # Apicall für NASA API
@@ -83,10 +83,6 @@ if st.button("Ergebnisse anzeigen"):
     for i in range(len(complete_json["photos"])):
         picture_urls.append(complete_json["photos"][i]['img_src'])
         camera_description.append(complete_json["photos"][i]["camera"]["full_name"])
-    
-
-
-
 
     
     st.title('NASA Opportunity Rover Mars Bilder')

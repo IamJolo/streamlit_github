@@ -89,7 +89,8 @@ if st.button("Öffne Quiz 1", key= "button1"):
 date = st.session_state.date
 max_ground_temp = st.session_state.max_ground_temp
 
-# Wenn Datum und maximale Bodentemperatur vorhanden sind wird das Quiz anzeigt (diese Werte werden durch generate_ground_temp() erzeugt, welche aufgerufen werden wenn das Quiz geöffnet wird), 
+# Wenn Datum und maximale Bodentemperatur vorhanden sind wird das Quiz angezeigt 
+#(diese Werte werden durch generate_ground_temp() erzeugt, welche aufgerufen werden wenn das Quiz geöffnet wird) 
 if date is not None and max_ground_temp is not None:
         st.write(f"Wie war die maximale Bodentemperatur(°C) am {date} (+/-10°C) auf dem Mars?")
         user_answer = st.number_input("Enter your answer:", key="input1")

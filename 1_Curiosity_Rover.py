@@ -94,7 +94,7 @@ if st.button("Ergebnisse anzeigen"):
 
     #Ausgabe der verbleibenden API calls (mit dem Demokey)
             
-    st.write("Du hast: " + str(remaining_api_calls) + " Aufrufe übrig (API calls).")
+    st.write("Du hast: " + str(remaining_api_calls) + " Aufrufe übrig (API calls, resets daily).")
 
 
 
