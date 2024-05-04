@@ -1,6 +1,6 @@
 # Import statements
 import streamlit as st
-import matplotlib as plt
+#import matplotlib as plt
 import pandas as pd
 from PIL import Image
 import requests
