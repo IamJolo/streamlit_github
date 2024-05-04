@@ -67,5 +67,37 @@ if st.session_state.check_answers:
         st.write(infotext_2)
 st.divider()
 
+st.subheader("Frage 3: Welches Element macht den größten Teil der Marsatmosphäre aus?")
+quiz_answer_3 = st.radio("Wähle die richtige Antwort aus", ["Sauerstoff", "Stickstoff", "Kohlendioxid", "Wasserstoff"])
+
+if st.session_state.check_answers:
+    infotext_3 = """Kohlendioxid (CO2) macht den größten Teil der Marsatmosphäre aus, nämlich etwa 95%. 
+    Es gibt nur sehr geringe Mengen anderer Gase wie Stickstoff und Argon. Die geringe Dichte 
+    der Atmosphäre und das Fehlen eines starken Magnetfelds führen zu extremen Bedingungen auf der 
+    Marsoberfläche, einschließlich extrem niedriger Temperaturen und starker Strahlung.
+    """
+    if quiz_answer_3 == "Kohlendioxid":
+        st.success("Richtig gemacht!")
+        st.write(infotext_3)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Leider falsch.")
+        st.write(infotext_3)
+    st.divider()
+
+# Frage 4
+st.subheader("Frage 4: Welches Raumschiff landete als erstes erfolgreich auf der Marsoberfläche?")
+quiz_answer_4 = st.radio("Wähle die richtige Antwort aus", ["Viking 1", "Mars Pathfinder", "Mars Science Laboratory (Curiosity)", "InSight"])
+if st.session_state.check_answers:
+    infotext_4 = """Viking 1 landete als erstes erfolgreich auf der Marsoberfläche."""
+    if quiz_answer_4 == "Viking 1":
+        st.success("Richtig !")
+        st.write(infotext_4)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Falsch.")
+        st.write(infotext_4)
+
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
+    st.write(" Du hast " + st.session_state.correct_answers_count+ " Antworten richtig")
