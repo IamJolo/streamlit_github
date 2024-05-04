@@ -101,4 +101,4 @@ if st.session_state.check_answers:
 # Antwort überprüfen
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
-    st.write(" Du hast " + st.session_state.correct_answers_count+ " Antworten richtig")
+    st.write(" Du hast " + str(st.session_state.correct_answers_count) + " Antworten richtig")
