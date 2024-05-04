@@ -67,5 +67,5 @@ if st.session_state.check_answers:
         st.write(infotext_2)
 st.divider()
 
-if st.button("Antwort überprüfen", key="quizbutton1"):
+if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
