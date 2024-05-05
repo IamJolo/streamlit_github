@@ -108,4 +108,5 @@ if st.button("Antwort prüfen", key="quizbutton1"):
     })
 
     # Display bar chart
-    st.bar_chart(chart_data.set_index("Antworten"))
+    st.subheader("Dies sind deine Resultate")
+    st.bar_chart(chart_data.set_index("Antworten"), color=['green', 'red'])
