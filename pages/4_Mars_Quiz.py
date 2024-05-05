@@ -102,15 +102,11 @@ if st.session_state.check_answers:
 # Antwort überprüfen
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
-    labels = ['Richtige Antorten', 'Falsche Antworten']
-    sizes = [20, 30, 40, 10]  # Values representing the sizes of each slice
+    chart_data = pd.DataFrame(
+   {
+       "col1": st.session_state.correct_answers_count,
+       "col2": 4-st.session_state.correct_answers_count,
+   }
+)
 
-    # Create pie chart
-    fig, ax = plt.subplots()
-    ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
-    ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
-
-    # Display pie chart using Streamlit
-    st.pyplot(fig)
-
-    st.write(" Du hast " + str(st.session_state.correct_answers_count) + " Antworten richtig")
+st.bar_chart(chart_data, x="col1", y="col2", color="col3")
