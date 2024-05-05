@@ -100,11 +100,12 @@ if st.session_state.check_answers:
 # Antwort überprüfen
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
-    chart_data = pd.DataFrame(
-   {
-       "col1": st.session_state.correct_answers_count,
-       "col2": 4-st.session_state.correct_answers_count,
-   }
-    )
+    
+    # Create DataFrame for bar chart
+    chart_data = pd.DataFrame({
+        "Antworten": ["Richtig", "Falsch"],
+        "Anzahl": [st.session_state.correct_answers_count, 4 - st.session_state.correct_answers_count],
+    })
 
-    st.bar_chart(chart_data, x="col1", y="col2", color="col3")
+    # Display bar chart
+    st.bar_chart(chart_data.set_index("Antworten"))
