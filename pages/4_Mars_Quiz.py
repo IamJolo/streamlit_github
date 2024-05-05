@@ -129,6 +129,7 @@ if st.session_state.check_answers:
     else:
         st.error("Falsch.")
         st.write(infotext_6)
+        
 # Antwort überprüfen
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
