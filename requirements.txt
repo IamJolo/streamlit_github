@@ -1,7 +1,0 @@
-streamlit
-pandas
-PIL
-requests
-io
-mathplotlib
-numpy
