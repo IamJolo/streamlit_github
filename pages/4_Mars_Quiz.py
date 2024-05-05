@@ -105,6 +105,6 @@ if st.button("Antwort prüfen", key="quizbutton1"):
        "col1": st.session_state.correct_answers_count,
        "col2": 4-st.session_state.correct_answers_count,
    }
-)
+    )
 
-st.bar_chart(chart_data, x="col1", y="col2", color="col3")
+    st.bar_chart(chart_data, x="col1", y="col2", color="col3")
