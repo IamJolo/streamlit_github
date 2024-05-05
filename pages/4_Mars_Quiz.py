@@ -97,6 +97,38 @@ if st.session_state.check_answers:
         st.error("Falsch.")
         st.write(infotext_4)
 
+# Frage 5
+st.subheader("Frage 5: Wie wird der Mars auch genannt?")
+quiz_answer_5 = st.text_input("Gib deine Antwort ein")
+
+if st.session_state.check_answers:
+    correct_answer_5 = ["der rote planet", "rote", "roter planet", "rote planet"]
+    infotext_5 = """Der Mars wird oft als "Der rote Planet" bezeichnet aufgrund seiner charakteristischen roten Färbung."""
+    if quiz_answer_5.lower() in correct_answer_5:
+        st.success("Richtig!")
+        st.write(infotext_5)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Falsch.")
+        st.write(infotext_5)
+
+st.divider()
+
+# Frage 6
+st.subheader("Frage 6: Wie viele Monde hat der Mars?")
+quiz_answer_6_options = ["1", "2", "6", "13"]
+quiz_answer_6 = st.selectbox("Wähle die richtige Antwort aus", quiz_answer_6_options)
+
+if st.session_state.check_answers:
+    correct_answer_6 = "2"
+    infotext_6 = """Der Mars hat zwei Monde namens Phobos und Deimos."""
+    if quiz_answer_6 == correct_answer_6:
+        st.success("Richtig!")
+        st.write(infotext_6)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Falsch.")
+        st.write(infotext_6)
 # Antwort überprüfen
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
