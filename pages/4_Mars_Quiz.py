@@ -133,12 +133,15 @@ if st.session_state.check_answers:
         st.error("Falsch.")
         st.write(infotext_6)
 
-# Antwort überprüfen
-if st.button("Antwort prüfen", key="quizbutton1"):
-    st.session_state.check_answers = True
-    
+
+check_button = st.button("Antwort prüfen", key="quizbutton1")
+
+# Define a function to check answers
+def check_answers():
     if st.session_state.infotext_displayed: 
-        # Create DataFrame for bar chart
+        # Your answer checking logic for each question goes here
+        
+        # Display results immediately after answer checking
         chart_data = pd.DataFrame({
             "Antworten": ["Richtig", "Falsch"],
             "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
@@ -147,3 +150,22 @@ if st.button("Antwort prüfen", key="quizbutton1"):
         # Display bar chart
         st.subheader("Dies sind deine Resultate")
         st.bar_chart(chart_data.set_index("Antworten"))
+
+# Use on_change to trigger answer checking when st.session_state.check_answers changes
+check_button.on_change(check_answers, 'click')
+
+
+# # Antwort überprüfen
+# if st.button("Antwort prüfen", key="quizbutton1"):
+#     st.session_state.check_answers = True
+    
+#     if st.session_state.infotext_displayed: 
+#         # Create DataFrame for bar chart
+#         chart_data = pd.DataFrame({
+#             "Antworten": ["Richtig", "Falsch"],
+#             "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
+#         })
+
+#         # Display bar chart
+#         st.subheader("Dies sind deine Resultate")
+#         st.bar_chart(chart_data.set_index("Antworten"))
