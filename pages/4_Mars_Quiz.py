@@ -152,7 +152,7 @@ def check_answers():
         st.bar_chart(chart_data.set_index("Antworten"))
 
 # Use on_change to trigger answer checking when st.session_state.check_answers changes
-check_button.on_change(check_answers, 'click')
+check_button.on_change(check_answers)
 
 
 # # Antwort überprüfen
