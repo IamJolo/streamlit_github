@@ -149,21 +149,5 @@ if st.session_state.check_answers:
     # Display bar chart
     st.subheader("Dies sind deine Resultate")
     st.bar_chart(chart_data.set_index("Antworten"))
-    
-if st.session_state.check_answers and not st.session_state.page_rerun:
-    st.experimental_rerun()
 
-# # Antwort überprüfen
-# if st.button("Antwort prüfen", key="quizbutton1"):
-#     st.session_state.check_answers = True
-    
-#     if st.session_state.infotext_displayed: 
-#         # Create DataFrame for bar chart
-#         chart_data = pd.DataFrame({
-#             "Antworten": ["Richtig", "Falsch"],
-#             "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
-#         })
 
-#         # Display bar chart
-#         st.subheader("Dies sind deine Resultate")
-#         st.bar_chart(chart_data.set_index("Antworten"))
