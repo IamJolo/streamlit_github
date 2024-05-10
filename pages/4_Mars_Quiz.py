@@ -28,7 +28,7 @@ if 'correct_answers_count' not in st.session_state:
     st.session_state.correct_answers_count = 0
 
 if 'infotext_displayed' not in st.session_state:
-    st.session_state.infotext_displayed = False
+    st.session_state.infotext_displayed = True
 
 #Anzeige der Frage 1
 st.subheader("Frage 1: Wie viele Tage hat ein Jahr auf dem Mars?")
@@ -37,7 +37,6 @@ quiz_answer_1 = st.radio("Wähle die richtige Antwort aus", ["365 Tage", "687 Ta
 
 #Button um den Antwort auszugeben und Infotext auszugeben
 if st.session_state.check_answers:
-    st.session_state.infotext_displayed = True
     infotext_1 = """Ein Marsjahr ist viel länger als ein Jahr auf der Erde! Der Mars benötigt 
                     etwa 687 Tage, um die Sonne einmal zu umkreisen. Das liegt daran, dass seine 
                     Umlaufbahn um die Sonne größer ist als die der Erde."""
@@ -152,8 +151,9 @@ if st.session_state.check_answers:
     st.subheader("Dies sind deine Resultate")
     st.bar_chart(chart_data.set_index("Antworten"))
 
-    st.experimental_rerun()
-    st.session_state.check_answers = True
+    if st.session_state.infotext_displayed:
+        st.experimental_rerun()
+        st.session_state.infotext_displayed = False
 # # Antwort überprüfen
 # if st.button("Antwort prüfen", key="quizbutton1"):
 #     st.session_state.check_answers = True
