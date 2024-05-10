@@ -27,8 +27,7 @@ if 'check_answers' not in st.session_state:
 if 'correct_answers_count' not in st.session_state:
     st.session_state.correct_answers_count = 0
 
-if 'infotext_displayed' not in st.session_state:
-    st.session_state.infotext_displayed = True
+
 
 #Anzeige der Frage 1
 st.subheader("Frage 1: Wie viele Tage hat ein Jahr auf dem Mars?")
@@ -150,10 +149,10 @@ if st.session_state.check_answers:
     # Display bar chart
     st.subheader("Dies sind deine Resultate")
     st.bar_chart(chart_data.set_index("Antworten"))
+    
+if st.session_state.check_answers and not st.session_state.page_rerun:
+    st.experimental_rerun()
 
-    if st.session_state.infotext_displayed:
-        st.experimental_rerun()
-        st.session_state.infotext_displayed = False
 # # Antwort überprüfen
 # if st.button("Antwort prüfen", key="quizbutton1"):
 #     st.session_state.check_answers = True
