@@ -27,6 +27,9 @@ if 'check_answers' not in st.session_state:
 if 'correct_answers_count' not in st.session_state:
     st.session_state.correct_answers_count = 0
 
+if 'rerun_trigger' not in st.session_state:
+    st.session_state.rerun_trigger = False
+
 
 
 #Anzeige der Frage 1
@@ -149,5 +152,6 @@ if st.session_state.check_answers:
     # Display bar chart
     st.subheader("Dies sind deine Resultate")
     st.bar_chart(chart_data.set_index("Antworten"))
+    st.session_state.rerun_trigger = True
 
 
