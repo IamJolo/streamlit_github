@@ -138,20 +138,21 @@ check_button = st.button("Antwort prüfen", key="quizbutton1")
 
 if check_button:
     st.session_state.check_answers = True
+    st.rerun()
 
 # Check answers if the button is pressed
-    if st.session_state.check_answers:
-        # Your answer checking logic for each question goes here
-        
-        # Display results immediately after answer checking
-        chart_data = pd.DataFrame({
-            "Antworten": ["Richtig", "Falsch"],
-            "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
-        })
+if st.session_state.check_answers:
+    # Your answer checking logic for each question goes here
+    
+    # Display results immediately after answer checking
+    chart_data = pd.DataFrame({
+        "Antworten": ["Richtig", "Falsch"],
+        "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
+    })
 
-        # Display bar chart
-        st.subheader("Dies sind deine Resultate")
-        st.bar_chart(chart_data.set_index("Antworten"))
-        st.session_state.rerun_trigger = True
+    # Display bar chart
+    st.subheader("Dies sind deine Resultate")
+    st.bar_chart(chart_data.set_index("Antworten"))
+    st.session_state.rerun_trigger = True
 
 
