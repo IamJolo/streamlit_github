@@ -151,6 +151,9 @@ if st.session_state.check_answers:
     # Display bar chart
     st.subheader("Dies sind deine Resultate")
     st.bar_chart(chart_data.set_index("Antworten"))
+
+    st.experimental_rerun()
+    st.session_state.check_answers = True
 # # Antwort überprüfen
 # if st.button("Antwort prüfen", key="quizbutton1"):
 #     st.session_state.check_answers = True
