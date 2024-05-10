@@ -27,6 +27,9 @@ if 'check_answers' not in st.session_state:
 if 'correct_answers_count' not in st.session_state:
     st.session_state.correct_answers_count = 0
 
+if 'infotext_displayed' not in st.session_state:
+    st.session_state.infotext_displayed = False
+
 #Anzeige der Frage 1
 st.subheader("Frage 1: Wie viele Tage hat ein Jahr auf dem Mars?")
 # Definition des Radiomenüs mit Antwortmeüs
@@ -34,7 +37,7 @@ quiz_answer_1 = st.radio("Wähle die richtige Antwort aus", ["365 Tage", "687 Ta
 
 #Button um den Antwort auszugeben und Infotext auszugeben
 if st.session_state.check_answers:
-    infotext_displayed = True
+    st.session_state.infotext_displayed = True
     infotext_1 = """Ein Marsjahr ist viel länger als ein Jahr auf der Erde! Der Mars benötigt 
                     etwa 687 Tage, um die Sonne einmal zu umkreisen. Das liegt daran, dass seine 
                     Umlaufbahn um die Sonne größer ist als die der Erde."""
@@ -134,7 +137,7 @@ if st.session_state.check_answers:
 if st.button("Antwort prüfen", key="quizbutton1"):
     st.session_state.check_answers = True
     
-    if infotext_displayed: 
+    if st.session_state.infotext_displayed: 
         # Create DataFrame for bar chart
         chart_data = pd.DataFrame({
             "Antworten": ["Richtig", "Falsch"],
