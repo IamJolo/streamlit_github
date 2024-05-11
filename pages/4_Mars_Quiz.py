@@ -173,7 +173,6 @@ if check_button:
 
 # Check answers if the button is pressed
 if st.session_state.check_answers:
-    # Your answer checking logic for each question goes here
     
     # Display results immediately after answer checking
     chart_data = pd.DataFrame({
