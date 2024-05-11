@@ -165,6 +165,34 @@ if st.session_state.check_answers:
         st.write(infotext_8)
 st.divider()
 
+#Frage 9
+st.subheader("Frage 9: Welches Jahr markierte den Beginn der ersten erfolgreichen Marsmission?")
+quiz_answer_9 = st.radio("Wähle die richtige Antwort aus", ["1965", "1971", "1997", "2004"])
+if st.session_state.check_answers:
+    infotext_9 = """Das Jahr 1971 markierte den Beginn der ersten erfolgreichen Marsmission mit der Ankunft der sowjetischen Sonde Mars 3."""
+    if quiz_answer_9 == "1971":
+        st.success("Korrekt!")
+        st.write(infotext_9)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Leider falsch.")
+        st.write(infotext_9)
+st.divider()
+
+#Frage 10
+st.subheader("Frage 10: Wie viele erfolgreiche Landungen auf dem Mars wurden bisher durchgeführt?")
+quiz_answer_10 = st.radio("Wähle die richtige Antwort aus", ["3", "7", "13", "21"])
+if st.session_state.check_answers:
+    infotext_10 = """Bisher wurden insgesamt 7 erfolgreiche Landungen auf dem Mars durchgeführt."""
+    if quiz_answer_10 == "7":
+        st.success("Richtig!")
+        st.write(infotext_10)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Fast, aber nicht ganz.")
+        st.write(infotext_10)
+st.divider()
+
 check_button = st.button("Antwort prüfen", key="quizbutton1")
 
 if check_button:
