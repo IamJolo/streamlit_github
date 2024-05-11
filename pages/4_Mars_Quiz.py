@@ -205,7 +205,7 @@ if st.session_state.check_answers:
     # Display results immediately after answer checking
     chart_data = pd.DataFrame({
         "Antworten": ["Richtig", "Falsch"],
-        "Anzahl": [st.session_state.correct_answers_count, 8 - st.session_state.correct_answers_count],
+        "Anzahl": [st.session_state.correct_answers_count, 10 - st.session_state.correct_answers_count],
     })
 
     # Display bar chart
