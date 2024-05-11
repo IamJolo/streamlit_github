@@ -133,6 +133,37 @@ if st.session_state.check_answers:
     else:
         st.error("Falsch.")
         st.write(infotext_6)
+st.divider()
+
+# Frage 7
+st.subheader("Frage 7: Wie lange dauert es, eine Nachricht von der Erde zum Mars zu senden?")
+quiz_answer_7 = st.radio("Wähle die richtige Antwort aus", ["etwa 3 Minuten", "etwa 8 Minuten", "etwa 12 Minuten", "etwa 20 Minuten"])
+if st.session_state.check_answers:
+    infotext_7 = """Es dauert etwa 8 Minuten, eine Nachricht von der Erde zum Mars zu senden. Die genaue Zeit hängt von 
+    der relativen Position der beiden Planeten in ihren Umlaufbahnen um die Sonne ab."""
+    if quiz_answer_7 == "etwa 8 Minuten":
+        st.success("Richtig gemacht!")
+        st.write(infotext_7)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Falsch.")
+        st.write(infotext_7)
+st.divider()
+
+# Frage 8
+st.subheader("Frage 8: Welcher Mars-Rover entdeckte erstmals Wasser auf dem Mars?")
+quiz_answer_8 = st.radio("Wähle die richtige Antwort aus", ["Opportunity", "Curiosity", "Perseverance", "Spirit"])
+if st.session_state.check_answers:
+    infotext_8 = """Der Mars-Rover Curiosity entdeckte erstmals  Wasser auf dem Mars. Die Analyse von 
+    Gesteinsproben zeigte Anzeichen für früheres flüssiges Wasser auf der Marsoberfläche."""
+    if quiz_answer_8 == "Curiosity":
+        st.success("Richtig gemacht!")
+        st.write(infotext_8)
+        st.session_state.correct_answers_count += 1
+    else:
+        st.error("Fast, aber nicht ganz.")
+        st.write(infotext_8)
+st.divider()
 
 check_button = st.button("Antwort prüfen", key="quizbutton1")
 
@@ -147,7 +178,7 @@ if st.session_state.check_answers:
     # Display results immediately after answer checking
     chart_data = pd.DataFrame({
         "Antworten": ["Richtig", "Falsch"],
-        "Anzahl": [st.session_state.correct_answers_count, 6 - st.session_state.correct_answers_count],
+        "Anzahl": [st.session_state.correct_answers_count, 8 - st.session_state.correct_answers_count],
     })
 
     # Display bar chart
