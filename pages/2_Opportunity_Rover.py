@@ -56,7 +56,8 @@ def display_image_from_url(url,description):
         image = Image.open(BytesIO(response.content))
         st.image(image, caption=description, use_column_width=True)
     except: 
-        st.write(" The API for the Opportunity Rover currently doesn't return pictures. It forwards to the NASA website. This may change later")
+        st.write(""" The API for the Opportunity Rover is currently being serviced and thus only
+        forwards to the NASA website. It will be activated again in the upcoming weeks""")
 
 if st.button("Ergebnisse anzeigen"):
     # Apicall für NASA API
