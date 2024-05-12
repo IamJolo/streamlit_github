@@ -49,7 +49,7 @@ loop_interval = st.number_input("Anzahl ausgegebener Bilder", min_value=1, step=
 
 
 
-# Funktion zum Anzeigen der NASA Bilder
+# Funktion zum Anzeigen der NASA Bilder inklusive error handling
 def display_image_from_url(url,description):
     response = requests.get(url)
     try: 
@@ -59,8 +59,8 @@ def display_image_from_url(url,description):
         st.write(""" The API for the Opportunity Rover is currently being serviced and thus only
         forwards to the NASA website. It will be activated again in the upcoming weeks""")
 
+# Apicall für NASA API
 if st.button("Ergebnisse anzeigen"):
-    # Apicall für NASA API
     api_start = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?earth_date="
     api_date = str(year)+"-"+str(month)+"-"+str(day)
     api_date_rest = "&api_key="
@@ -73,9 +73,6 @@ if st.button("Ergebnisse anzeigen"):
     camera_description =[]
     remaining_api_calls = response.headers["X-Ratelimit-Remaining"]
     
-    #st.write(complete_json)
-    #st.write(picture_urls)
-     
     if len(complete_json["photos"]) == 0:
         st.write("Für dieses Datum sind keine Daten verfügbar. Versuchen Sie einen anderen!")
     
@@ -103,8 +100,7 @@ if st.button("Ergebnisse anzeigen"):
         if (i+1) % loop_interval ==0:
             break
     
-    #Ausgabe der verbleibenden API calls (mit dem Demokey)
-    
+    #Ausgabe der verbleibenden API calls
     st.write("Du hast: " + str(remaining_api_calls) + " Aufrufe übrig (API calls).")
 
 

@@ -134,8 +134,6 @@ if date is not None and max_air_temp is not None:
 st.line_chart(df.set_index('earth_date_time')[['max_air_temp(°C)', 'min_air_temp(°C)']].dropna())
 
 
-
-
 # Beschreibung anzeigen
 st.write("Atmosphärischer Druck auf dem Mars")
 
