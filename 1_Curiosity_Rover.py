@@ -8,6 +8,7 @@ from io import BytesIO
 # Seitenkonfiguration einstellen
 st.set_page_config(page_title="Mars Rover Images", page_icon=":computer:")
 
+#Titel
 st.title('Mars Entdecker')
 
 image = open("bwl_ien.png", "rb").read()
@@ -51,8 +52,9 @@ def display_image_from_url(url,description):
     image = Image.open(BytesIO(response.content))
     st.image(image, caption=description, use_column_width=True)
 
+
+# Apicall für NASA API
 if st.button("Ergebnisse anzeigen"):
-    # Apicall für NASA API
     api_start = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date="
     api_date = str(year)+"-"+str(month)+"-"+str(day)
     api_date_rest = "&api_key="
@@ -81,7 +83,7 @@ if st.button("Ergebnisse anzeigen"):
     # Erstellung von zwei Spalten zur Anzeige der Fotos
     col1, col2 = st.columns(2)
     
-    #Anzeige der Bilder und anhängen der Beschreibungen
+    #Anzeige der Bilder und Anhängen der Beschreibungen
     for i, url in enumerate(picture_urls):
         with (col1 if i % 2 == 0 else col2):
             description = "Curiosity Rover Bild: " + str(i+1) + " Kamera: " + camera_description[i]
@@ -92,8 +94,7 @@ if st.button("Ergebnisse anzeigen"):
         if (i+1) % loop_interval ==0:
             break
 
-    #Ausgabe der verbleibenden API calls (mit dem Demokey)
-            
+    #Ausgabe der verbleibenden API calls
     st.write("Du hast: " + str(remaining_api_calls) + " Aufrufe übrig (API calls, resets daily).")
 
 
