@@ -4,6 +4,10 @@ import streamlit as st
 import pandas as pd
 
 
+#Citation   I: Diese Seite wurde mit Unterstützung der offiziellen Streamlit-Dokumentation erstellt.
+#Citation  II: Zusätzlich wurde ChatGPT zur Erklärung der st.session_state Funktion genutzt 
+#              und zum Teil zur Erzeugung des Inhalts der Quizfragen
+
 # Seitenkonfiguration einstellen
 st.set_page_config(page_title="Mars Rover Images", page_icon=":computer:")
 

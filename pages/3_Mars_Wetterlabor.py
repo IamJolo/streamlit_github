@@ -6,6 +6,8 @@ import pandas as pd
 #import dataset
 df = pd.read_csv('REMS_Mars_Dataset.csv')
 
+#Citation  I: Diese Seite wurde mit Unterstützung der offiziellen Streamlit-Dokumentation erstellt.
+#Citation II: Zusätzlich wurde ChatGPT zur Erklärung der st.session_state Funktion genutzt
 #Formatierung der relevanten Spalten ins korrekte Datenformat und richtige Definition der NaN Werte
 df['earth_date_time'] = pd.to_datetime(df['earth_date_time'].str.split(' ').str[1])
 df['sol_number'] = df['sol_number'].str.split(' ').str[1].astype(int)

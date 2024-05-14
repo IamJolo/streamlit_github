@@ -7,6 +7,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+#Citation: Diese Seite wurde mit Unterstützung der offiziellen Streamlit-Dokumentation erstellt.
 # Seitenkonfiguration einstellen
 st.set_page_config(page_title="Mars Rover Images", page_icon=":computer:")
 
